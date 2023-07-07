@@ -17,6 +17,50 @@ services:
     networks:
       - microservice
 
+  api-gateway:
+    build:
+      context: grpc-nest
+      dockerfile: api-gateway/Dockerfile
+    image: "microservice-api-gateway:latest"
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - microservice
+
+  auth-svc:
+    build:
+      context: grpc-nest
+      dockerfile: auth-svc/Dockerfile
+    image: "microservice-auth-svc:latest"
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - microservice
+
+  order-svc:
+    build:
+      context: grpc-nest
+      dockerfile: order-svc/Dockerfile
+    image: "microservice-order-svc:latest"
+    restart: always
+    ports:
+      - 3002:3002
+    networks:
+      - microservice
+
+  product-svc:
+    build:
+      context: grpc-nest
+      dockerfile: product-svc/Dockerfile
+    image: "microservice-product-svc:latest"
+    restart: always
+    ports:
+      - 3003:3003
+    networks:
+      - microservice
+
 volumes:
   postgres:
     name: microservice-postgres
