@@ -11,7 +11,7 @@ async function bootstrap() {
     {
       transport: Transport.GRPC,
       options: {
-        url: '0.0.0.0:50053',
+        url: '0.0.0.0:3003',
         package: protobufPackage,
         protoPath: join('../proto/product.proto'),
       },

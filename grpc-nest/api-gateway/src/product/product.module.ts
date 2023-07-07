@@ -10,7 +10,7 @@ import { ProductController } from './product.controller';
         name: PRODUCT_SERVICE_NAME,
         transport: Transport.GRPC,
         options: {
-          url: '0.0.0.0:50053',
+          url: '0.0.0.0:3003',
           package: PRODUCT_PACKAGE_NAME,
           protoPath: '../proto/product.proto',
         },
